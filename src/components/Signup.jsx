@@ -76,9 +76,9 @@ export default function Signup() {
             <input
               className="input"
               type="password"
-              name={'passwordConfirmation'}
+              name={'password_confirmation'}
               onChange={handleChange}
-              value={formData.passwordConfirmation}
+              value={formData.password_confirmation}
             />
           </div>
         </div>

@@ -25,9 +25,9 @@ const Navbar = () => {
       <div className="navbar-end">
         <div className="navbar-item">
           <div className="buttons">
-            <Link to="/Home" className="button">Home</Link>
-            {!isLoggedIn && <Link to="/signup" className="button">Signup</Link>}
-            {!isLoggedIn && <Link to="/login" className="button">Login</Link>}
+            <Link to="/" className="button">Home</Link>
+            <Link to="/signup" className="button">Signup</Link>
+            <Link to="/login" className="button">Login</Link>
             {isLoggedIn && <button className="button" onClick={logout}>Logout</button>}
           </div>
         </div>
