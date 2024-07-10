@@ -1,3 +1,7 @@
+body{
+  background: linear-gradient(rgba(77, 91, 131, 0.97), rgba(77, 91, 131, 0.97)), url("https://img.freepik.com/free-vector/vector-background-seamless-retro-film_2065-725.jpg?t=st=1720634229~exp=1720637829~hmac=d6babc704ec518d7612952ced10be337e823a3441461d251a5c8783778a51ace&w=740");
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -40,3 +44,29 @@
 .read-the-docs {
   color: #888;
 }
+
+.movies-display{
+  min-width: 20vw;
+  max-width: 13vw;
+  min-height: 21vh;
+  background-size: contain;
+}
+
+.movie{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: start;
+    list-style: none;
+    padding: 0;
+    gap: 15px;
+    margin:10px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0);
+}
+
+.review:hover {
+    background-image: url('https://i.ibb.co/7GCspQD/cb1-2.png');
+}
+
+
