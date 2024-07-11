@@ -3,10 +3,6 @@ body{
 }
 
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 }
 
 .logo {
@@ -63,6 +59,12 @@ body{
     gap: 15px;
     margin:10px;
     box-shadow: 0 4px 8px 0 rgb(0 0 0);
+}
+
+.review{
+  background-image: url('https://i.imgur.com/3vLynbd.png');
+  height:100px;
+  width:100px;
 }
 
 .review:hover {

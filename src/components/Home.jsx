@@ -28,10 +28,10 @@ import { useNavigate } from 'react-router-dom'
     return (
       <div className='movies-display'>
         {movies.map((movie) => (
-            <ul className='movie-list'>
+            <ul key={movie.id} className='movie-list'>
                 <li className='movie-item'>
                     <img className='movie' src={movie.poster}  />
-                    <a className="review" onClick={() => handleSubmit()}><img src="https://i.imgur.com/3vLynbd.png" referrerpolicy="no-referrer"></img></a>
+                    <a onClick={() => handleSubmit()}><div className="review"></div></a>
                 </li>
             </ul>
               ))}
