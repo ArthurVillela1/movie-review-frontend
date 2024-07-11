@@ -50,6 +50,7 @@ body{
 
 .movie{
     display: flex;
+    border-radius: 10px;
     justify-content: space-between;
     flex-direction: row;
     flex-wrap: wrap;
