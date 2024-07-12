@@ -1,7 +1,6 @@
 import React, { useEffect, useState} from 'react'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
-
+import { Link, useNavigate } from 'react-router-dom'
 
   const Home = () => {
 
@@ -25,18 +24,42 @@ import { useNavigate } from 'react-router-dom'
         navigate('/movie')
     }
 
+    return <>
+    <div className='container-movies'>
+      {movies.map((movie, index) => {
+        return <div className="center-of-poster" key={movie.id}>
+          <ul key={movie.id} className='movie-list'>
+          <li className='movie-item'>
+          <img className="poster" src={movie.poster} />
+          <Link to={`/movies/${movie.id}`}>
+                    <div onClick={() => handleSubmit()} className="review"></div>
+          </Link>
+          </li>
+          </ul>
+        </div>
+      })}
+    </div>
+    </>
+
+
+
+
     return (
       <div className='movies-display'>
         {movies.map((movie) => (
             <ul key={movie.id} className='movie-list'>
                 <li className='movie-item'>
                     <img className='movie' src={movie.poster}  />
-                    <a onClick={() => handleSubmit()}><div className="review"></div></a>
+                    <Link to={`/movies/${movie.id}`}>
+                    <div onClick={() => handleSubmit()} className="review"></div>
+                    </Link>
                 </li>
             </ul>
               ))}
       </div>
     );
   };
+
+
 
   export default Home

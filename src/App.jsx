@@ -8,7 +8,7 @@ import Home from './components/Home'
 import Navbar from './components/Navbar'
 import Signup from './components/Signup'
 import Login from './components/Login'
-//import Movie from './components/Movie'
+import Movie from './components/Movies'
 
 const App = () => {
   return <Router>
@@ -16,9 +16,10 @@ const App = () => {
     < ToastContainer />
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/movies/:movieId" element={<Movie />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login />} />
-      {/* <Route path="/movie" element={<Movie />} /> */}
+      <Route path="/movies" element={<Movie />} />
     </Routes>
   </Router>
 }
