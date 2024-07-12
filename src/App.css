@@ -3,9 +3,6 @@ body{
   height:100vh;
 }
 
-#root {
-}
-
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -65,7 +62,7 @@ body{
 .poster{
   min-width: 13vw;
   max-width: 13vw;
-  min-height: 21vh;
+  max-height: 40vh;
   background-size: contain;
   box-shadow: 0 4px 8px 0 rgb(0 0 0);
   border-radius: 10px;
