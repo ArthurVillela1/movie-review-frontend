@@ -5,8 +5,8 @@ import { Link, useNavigate } from 'react-router-dom'
   const Home = () => {
 
     const navigate = useNavigate()
-
     const [movies, setMovies] = useState([])
+    
     
     useEffect(() => {
       const fetchMovies = async () => {
@@ -20,10 +20,6 @@ import { Link, useNavigate } from 'react-router-dom'
       fetchMovies()
     },[])
 
-    const handleSubmit = () => {
-        navigate('/movie')
-    }
-
     return <>
     <div className='container-movies'>
       {movies.map((movie, index) => {
@@ -32,7 +28,7 @@ import { Link, useNavigate } from 'react-router-dom'
           <li className='movie-item'>
           <img className="poster" src={movie.poster} />
           <Link to={`/movies/${movie.id}`}>
-                    <div onClick={() => handleSubmit()} className="review"></div>
+                    <div className="review"></div>
           </Link>
           </li>
           </ul>
@@ -40,26 +36,5 @@ import { Link, useNavigate } from 'react-router-dom'
       })}
     </div>
     </>
-
-
-
-
-    return (
-      <div className='movies-display'>
-        {movies.map((movie) => (
-            <ul key={movie.id} className='movie-list'>
-                <li className='movie-item'>
-                    <img className='movie' src={movie.poster}  />
-                    <Link to={`/movies/${movie.id}`}>
-                    <div onClick={() => handleSubmit()} className="review"></div>
-                    </Link>
-                </li>
-            </ul>
-              ))}
-      </div>
-    );
-  };
-
-
-
+}
   export default Home
