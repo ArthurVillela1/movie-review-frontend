@@ -53,10 +53,11 @@ const Movie = () => {
         <div className="container">
             {movie && <>
                 {movie.reviews.map((review) => {
-                return <div className="review box" key={review.id}>
-                    <ul key={review.id} className='reviewlist'>
+                return <div className="reviews box" key={review.id}>
+                    <ul key={review.id} className='reviewslist'>
                         <li className='review-item'>
                             <p>{review.text}</p>
+                            <p>{review.ratings}</p>
                         </li>
                     </ul>
                 </div>
@@ -73,7 +74,22 @@ const Movie = () => {
                             onChange={handleChange}
                             value={formData.text}
                         />
-                        <button className="postReviewButton">Post Review</button>
+                        <button className="postReviewButton">Post</button>
+                    </div>
+                </div>
+            </form>
+            <form onSubmit={handleSubmit}>
+                <div className="field">
+                    <label className="label">Your Rating</label>
+                    <div className="control">
+                        <input
+                            className="input"
+                            type="ratings"
+                            name={'ratings'}
+                            onChange={handleChange}
+                            value={formData.ratings}
+                        />
+                        <button className="postReviewButton">Post</button>
                     </div>
                 </div>
             </form>
