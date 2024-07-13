@@ -90,9 +90,8 @@ body{
 
 .reviews {
   flex: 1;
-  border: 1px solid #ccc;
   padding: 20px;
-  background-color: #b1aaaa;
+  background-color: #ceb4b4;
   margin-bottom: 20px;
   box-sizing: border-box;
   max-width: 500px;
@@ -107,12 +106,6 @@ form {
   margin-top: 20px;
 }
 
-.field {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  margin-bottom: 10px;
-}
 
 .control {
   flex: 1;
@@ -153,4 +146,16 @@ form {
 
 .review-item p {
   margin: 5px 0;
+}
+
+.label{
+  color:rgb(226, 219, 219);
+}
+
+#ratingbox{
+  width:60px;
+}
+
+#submitLoginButton{
+  width:100px;
 }

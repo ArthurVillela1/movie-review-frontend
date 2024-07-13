@@ -27,7 +27,7 @@ export default function Login() {
       toast.success('Login successful!');
       navigate('/')
     } catch (err) {
-      toast.error(err.response.data.message);
+      toast.error("Login failed");
       console.log(err.response.data)
     }
   }
@@ -59,7 +59,7 @@ export default function Login() {
             />
           </div>
         </div>
-        <button className="button">Submit</button>
+        <button id="submitLoginButton" className="button">Submit</button>
       </form>
     </div>
   </div>
