@@ -75,12 +75,6 @@ const Movie = () => {
                             onChange={handleChange}
                             value={formData.text}
                         />
-                        <button className="postReviewButton">Post</button>
-                    </div>
-                </div>
-            </form>
-            <form onSubmit={handleSubmit}>
-                <div className="field">
                     <label className="label">Your Rating</label>
                     <div className="control">
                         <input
@@ -90,6 +84,7 @@ const Movie = () => {
                             onChange={handleChange}
                             value={formData.ratings}
                         />
+                    </div>
                         <button className="postReviewButton">Post</button>
                     </div>
                 </div>
