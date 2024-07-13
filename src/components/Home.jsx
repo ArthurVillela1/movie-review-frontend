@@ -7,7 +7,6 @@ import { Link, useNavigate } from 'react-router-dom'
     const navigate = useNavigate()
     const [movies, setMovies] = useState([])
     
-    
     useEffect(() => {
       const fetchMovies = async () => {
         try{
@@ -21,9 +20,11 @@ import { Link, useNavigate } from 'react-router-dom'
     },[])
 
     return <>
+    <h1 class="title1">Welcome to Fresh Tomatoes 🍅</h1>
+    <h2 class="title1">Rate, Review, and Discover Your Next Favorite Movie!</h2>
     <div className='container-movies'>
       {movies.map((movie, index) => {
-        return <div className="center-of-poster" key={movie.id}>
+        return <div className="posters" key={movie.id}>
           <ul key={movie.id} className='movie-list'>
           <li className='movie-item'>
           <img className="poster" src={movie.poster} />

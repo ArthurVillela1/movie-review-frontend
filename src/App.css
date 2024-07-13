@@ -1,6 +1,6 @@
 body{
-  background: linear-gradient(rgba(77, 91, 131, 0.97), rgba(77, 91, 131, 0.97)), url("https://img.freepik.com/free-vector/vector-background-seamless-retro-film_2065-725.jpg?t=st=1720634229~exp=1720637829~hmac=d6babc704ec518d7612952ced10be337e823a3441461d251a5c8783778a51ace&w=740");
-  height:100vh;
+  background: linear-gradient(rgba(77, 91, 131, 0.96), rgba(77, 91, 131, 0.96)), url("https://img.freepik.com/free-vector/vector-background-seamless-retro-film_2065-725.jpg?t=st=1720634229~exp=1720637829~hmac=d6babc704ec518d7612952ced10be337e823a3441461d251a5c8783778a51ace&w=740");
+  min-height:100vh;
 }
 
 .logo {
@@ -53,19 +53,31 @@ body{
 .container-movies{
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   min-width: 95%;
   align-items: stretch;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  padding:100px;
+  flex-direction:row;
 }
 
 .poster{
-  min-width: 13vw;
-  max-width: 13vw;
-  max-height: 40vh;
+  flex-shrink: 0;
+  width:  350px;
+  height: 500px;
+  object-fit: cover;
   background-size: contain;
   box-shadow: 0 4px 8px 0 rgb(0 0 0);
   border-radius: 10px;
-  margin:10px;
-
 }
+
+.navbar{
+  background: linear-gradient(rgba(77, 91, 131, 0.97), rgba(77, 91, 131, 0.97)), url("https://img.freepik.com/free-vector/vector-background-seamless-retro-film_2065-725.jpg?t=st=1720634229~exp=1720637829~hmac=d6babc704ec518d7612952ced10be337e823a3441461d251a5c8783778a51ace&w=740");
+}
+
+.title1, .title2{
+  color:rgb(221, 216, 216);
+  text-align: center;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size:50px;
+}
+

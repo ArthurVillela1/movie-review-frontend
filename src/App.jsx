@@ -12,7 +12,7 @@ import Movie from './components/Movies'
 
 const App = () => {
   return <Router>
-    <Navbar />
+    <Navbar  />
     < ToastContainer />
     <Routes>
       <Route path="/" element={<Home />} />

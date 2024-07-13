@@ -56,6 +56,7 @@ const Movie = () => {
                 return <div className="reviews box" key={review.id}>
                     <ul key={review.id} className='reviewslist'>
                         <li className='review-item'>
+                            <p>{review.owner.username}</p>
                             <p>{review.text}</p>
                             <p>{review.ratings}</p>
                         </li>
