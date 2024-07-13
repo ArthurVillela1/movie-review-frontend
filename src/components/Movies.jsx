@@ -7,6 +7,9 @@ const Movie = () => {
 
     const { movieId } = useParams()
     const [movie, setMovie] = useState(null)
+    const [userId, setUserId] = useState(null)
+    const [userPosted, setUserPosted] = useState(false)
+
 
     const [formData, setFormData] = useState({
         text: '',
@@ -22,19 +25,27 @@ const Movie = () => {
 
     async function handleSubmit(e) {
         e.preventDefault()
-        console.log(formData)
-        try {
-            const { data } = await axios.post(`http://localhost:8000/api/reviews/`, formData, {
-                headers:{
-                    Authorization: `Bearer ${localStorage.getItem("token")}`
-                }
-            })
 
-            toast.success('Review posted!');
+        if (formData.review === '' || formData.ratings === '') {
+            toast.error('Fill in ratings and reviews to post')
+        } else if (formData.text.length > 60) {
+            toast.error('Reviews must be under 60 characters');
+        } else if (formData.ratings > 10 || formData.ratings < 0) {
+            toast.error('Ratings must be between 0 and 10');
+        } else {
+            try {
+                const { data } = await axios.post(`http://localhost:8000/api/reviews/`, formData, {
+                    headers: {
+                        Authorization: `Bearer ${localStorage.getItem("token")}`
+                    }
+                })
 
-        } catch (err) {
-            toast.error(err.response.data.message);
-            console.log(err.response.data)
+                toast.success('Review posted!');
+
+            } catch (err) {
+                toast.error(err.response.data.message);
+                console.log(err.response.data)
+            }
         }
     }
 
@@ -47,27 +58,25 @@ const Movie = () => {
         fetchMovies()
     }, [movieId])
 
-    console.log(movie)
-
     return <>
-        <div className="container">
-            {movie && <>
-                {movie.reviews.map((review) => {
-                return <div className="reviews box" key={review.id}>
-                    <ul key={review.id} className='reviewslist'>
-                        <li className='review-item'>
-                            <p>{review.owner.username}</p>
-                            <p>{review.text}</p>
-                            <p>{review.ratings}</p>
-                        </li>
-                    </ul>
-                </div>
-  })}
-            <img src={movie.poster} />
+    <div className="container">
+        {movie && <>
+            <img className="poster" src={movie.poster} alt={`${movie.title} Poster`} />
+            <div className="reviews">
+                {movie.reviews.slice(-8).reverse().map((review) => {
+                    return <div key={review.id}>
+                        <ul className='reviewslist'>
+                            <li className='review-item'>
+                                <p><b>{review.owner.username}</b> {review.ratings} {review.text}</p>
+                            </li>
+                        </ul>
+                    </div>
+                })}
+            </div>
             <form onSubmit={handleSubmit}>
                 <div className="field">
-                    <label className="label">Your Review</label>
                     <div className="control">
+                        <label className="label">Your Review</label>
                         <input
                             className="input"
                             type="text"
@@ -75,23 +84,23 @@ const Movie = () => {
                             onChange={handleChange}
                             value={formData.text}
                         />
-                    <label className="label">Your Rating</label>
+                    </div>
                     <div className="control">
+                        <label className="label">Your Rating</label>
                         <input
                             className="input"
-                            type="ratings"
+                            type="number"
                             name={'ratings'}
                             onChange={handleChange}
                             value={formData.ratings}
                         />
                     </div>
-                        <button className="postReviewButton">Post</button>
-                    </div>
                 </div>
+                <button className="postReviewButton">Post</button>
             </form>
-            </>}
-        </div>
-    </>
+        </>}
+    </div>
+</>
 }
 
 export default Movie

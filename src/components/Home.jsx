@@ -27,7 +27,7 @@ const Home = () => {
   }, [])
 
   function handleUser() {
-    toast.error('You must be logged in to post reviews and ratings')
+    toast.error('Log in to post reviews and ratings')
   }
 
   return <>
