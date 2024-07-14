@@ -1,6 +1,6 @@
-body{
+body {
   background: linear-gradient(rgba(77, 91, 131, 0.96), rgba(77, 91, 131, 0.96)), url("https://img.freepik.com/free-vector/vector-background-seamless-retro-film_2065-725.jpg?t=st=1720634229~exp=1720637829~hmac=d6babc704ec518d7612952ced10be337e823a3441461d251a5c8783778a51ace&w=740");
-  min-height:100vh;
+  min-height: 100vh;
 }
 
 .logo {
@@ -9,9 +9,11 @@ body{
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -39,30 +41,31 @@ body{
   color: #888;
 }
 
-.review{
+.review {
   background-image: url('https://i.imgur.com/3vLynbd.png');
   background-size: cover;
-  height:100px;
-  width:100px;
+  height: 100px;
+  width: 100px;
+  margin-left:40px;
 }
 
 .review:hover {
-    background-image: url('https://i.ibb.co/7GCspQD/cb1-2.png');
+  background-image: url('https://i.ibb.co/7GCspQD/cb1-2.png');
 }
 
-.container-movies{
+.container-movies {
   display: flex;
   flex-wrap: wrap;
   min-width: 95%;
   align-items: stretch;
   justify-content: space-between;
-  padding:100px;
-  flex-direction:row;
+  padding: 100px;
+  flex-direction: row;
 }
 
-.poster{
+.poster {
   flex-shrink: 0;
-  width:  350px;
+  width: 350px;
   height: 500px;
   object-fit: cover;
   background-size: contain;
@@ -70,15 +73,18 @@ body{
   border-radius: 10px;
 }
 
-.navbar{
+.navbar {
   background: transparent;
+  display: flex;
+  justify-content: center; /* Center the navbar content */
 }
 
-.title1, .title2{
-  color:rgb(221, 216, 216);
+.title1,
+.title2 {
+  color: rgb(221, 216, 216);
   text-align: center;
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size:50px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 50px;
 }
 
 .container {
@@ -136,6 +142,7 @@ form {
 .field {
   width: 100%;
   margin-bottom: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .control {
@@ -146,9 +153,11 @@ form {
 .label {
   font-size: 1.1em;
   margin-bottom: 5px;
+  color: rgb(224, 221, 221);
 }
 
-#reviewbox, #ratingbox {
+#reviewbox,
+#ratingbox {
   width: 100%;
   padding: 10px;
   font-size: 1em;
@@ -178,6 +187,7 @@ form {
   padding: 10px;
   border-radius: 10px;
   background-color: #f2f2f2;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .reviews ul {
@@ -210,4 +220,27 @@ form {
 
 .reviews button:hover {
   background-color: #c82333;
+}
+
+.info {
+  color: rgb(225, 222, 222);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Adjust review container to display flex and align items */
+.review-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Style for rating paragraph */
+.rating {
+  margin-left: 80px;
+  color: #fff;
+  font-size: 27px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.ft{
+  color:rgb(162, 204, 162);
 }

@@ -170,9 +170,9 @@ const Movie = () => {
             {movie && (
                 <>
                     <img id="postertoreview" className="poster" src={movie.poster} alt={`${movie.title} Poster`} />
-                    <p>Director:{movie.director.name}</p>
-                    <p>Genre:{movie.genre.name}</p>
-                    <p>Average User Rating: {movie.average_rating}</p>
+                    <p class="info">Director: {movie.director.name}</p>
+                    <p class="info">Genre: {movie.genre.name}</p>
+                    <p class="info">Average Rating: <b>{Math.round(movie.average_rating * 10) / 10}</b></p>
                     {movie.reviews && movie.reviews.length > 0 && (
                         <div className="reviews">
                             {movie.reviews.slice(-8).reverse().map((review) => (
