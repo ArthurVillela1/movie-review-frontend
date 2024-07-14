@@ -77,8 +77,8 @@ const Movie = () => {
             if (formData.text === '' || formData.ratings === '') {
                 toast.error('Fill in ratings and reviews to post');
                 return;
-            } else if (formData.text.length > 100) {
-                toast.error('Reviews must be under 100 characters');
+            } else if (formData.text.length > 55) {
+                toast.error('Reviews must be under 55 characters');
                 return;
             } else if (formData.ratings > 10 || formData.ratings < 0) {
                 toast.error('Ratings must be between 0 and 10');
@@ -170,6 +170,9 @@ const Movie = () => {
             {movie && (
                 <>
                     <img id="postertoreview" className="poster" src={movie.poster} alt={`${movie.title} Poster`} />
+                    <p>Director:{movie.director.name}</p>
+                    <p>Genre:{movie.genre.name}</p>
+                    <p>Average User Rating: {movie.average_rating}</p>
                     {movie.reviews && movie.reviews.length > 0 && (
                         <div className="reviews">
                             {movie.reviews.slice(-8).reverse().map((review) => (
