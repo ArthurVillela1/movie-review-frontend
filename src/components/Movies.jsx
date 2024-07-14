@@ -72,7 +72,7 @@ const Movie = () => {
     // Handle new review submission
     async function handleSubmit(e) {
         e.preventDefault();
-
+    
         try {
             if (formData.text === '' || formData.ratings === '') {
                 toast.error('Fill in ratings and reviews to post');
@@ -84,7 +84,15 @@ const Movie = () => {
                 toast.error('Ratings must be between 0 and 10');
                 return;
             }
-
+    
+            // Check if the user has already reviewed the movie
+            const hasReviewed = movie.reviews.some(review => review.owner.id === userId);
+            if (hasReviewed) {
+                toast.error('You have already reviewed this movie.');
+                return;
+            }
+    
+            // Proceed with submitting the review
             await axios.post(`http://localhost:8000/api/reviews/`, formData, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -92,9 +100,8 @@ const Movie = () => {
             });
             toast.success('Review posted!');
             fetchMovieAndCheckReview(); // Reload movie data after submit
-            setEditingReviewId(null);    // Reset editing state after successful post
         } catch (err) {
-            toast.error(err.response.data.message);
+            toast.error(err.response.data.message || 'Error posting/reviewing');
             console.error('Error posting/reviewing:', err);
         }
     }
