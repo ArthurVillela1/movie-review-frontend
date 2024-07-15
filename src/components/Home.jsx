@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useLocation } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { baseUrl } from '../config';
+
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -15,7 +17,7 @@ const Home = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/movies');
+        const response = await axios.get(`${baseUrl}/api/movies`);
         setMovies(response.data);
       } catch (err) {
         console.log('Did not fetch');

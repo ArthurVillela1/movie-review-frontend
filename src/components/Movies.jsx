@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { baseUrl } from '../config';
 
 // Helper function to parse JWT token
 function parseJwt(token) {
@@ -37,7 +38,7 @@ const Movie = () => {
     // Fetch movie data and check if the user has already reviewed it
     async function fetchMovieAndCheckReview() {
         try {
-            const response = await axios.get(`http://localhost:8000/api/movies/${movieId}`);
+            const response = await axios.get(`${baseUrl}/api/movies/${movieId}`);
             const movieData = response.data;
             setMovie(movieData);
 
@@ -93,7 +94,7 @@ const Movie = () => {
             }
     
             // Proceed with submitting the review
-            await axios.post(`http://localhost:8000/api/reviews/`, formData, {
+            await axios.post(`${baseUrl}/api/reviews/`, formData, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`,
                 },
@@ -109,7 +110,7 @@ const Movie = () => {
     // Handle review deletion
     async function handleDeleteReview(reviewId) {
         try {
-            await axios.delete(`http://localhost:8000/api/reviews/${reviewId}`, {
+            await axios.delete(`${baseUrl}/api/reviews/${reviewId}`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`,
                 },
@@ -135,7 +136,7 @@ const Movie = () => {
             // Ensure 'owner' is added to formData
             formData.owner = userId; // Assuming userId is correctly set in your component
     
-            const response = await axios.put(`http://localhost:8000/api/reviews/${editingReviewId}`, formData, {
+            const response = await axios.put(`${baseUrl}/api/reviews/${editingReviewId}`, formData, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`,
                 },

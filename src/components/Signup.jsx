@@ -1,6 +1,7 @@
 import { useState } from "react"
 import axios from 'axios'
 import { useNavigate } from "react-router-dom"
+import { baseUrl } from "../config"
 
 export default function Signup() {
 
@@ -22,7 +23,7 @@ export default function Signup() {
   async function handleSubmit(e) {
     e.preventDefault() 
     try {
-      await axios.post(`http://localhost:8000/api/auth/signup`, formData)
+      await axios.post(`${baseUrl}/api/auth/signup`, formData)
       navigate('/login')
     } catch (err) {
       console.log(err.response.data)
