@@ -1,5 +1,5 @@
 body {
-  background: linear-gradient(rgba(77, 91, 131, 0.96), rgba(77, 91, 131, 0.96)), url("https://img.freepik.com/free-vector/vector-background-seamless-retro-film_2065-725.jpg?t=st=1720634229~exp=1720637829~hmac=d6babc704ec518d7612952ced10be337e823a3441461d251a5c8783778a51ace&w=740");
+  background: #121d38;
   min-height: 100vh;
 }
 
@@ -61,6 +61,10 @@ body {
   justify-content: space-between;
   padding: 100px;
   flex-direction: row;
+}
+
+.posters{
+  margin:10px;
 }
 
 .poster {
@@ -237,7 +241,7 @@ form {
 .rating {
   margin-left: 80px;
   color: #fff;
-  font-size: 27px;
+  font-size: 30px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 

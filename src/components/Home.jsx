@@ -30,7 +30,7 @@ const Home = () => {
 
   return (
     <>
-      <h1 className="title1">Welcome to <span class="ft">Fresh Tomatoes 🍅</span></h1>
+      <h1 className="title1">Welcome to <span className="ft">Fresh Tomatoes 🍅</span></h1>
       <h2 className="title1">Rate, Review, and Discover Your Next Favorite Movie!</h2>
       <div className="container-movies">
         {movies.map((movie) => {
